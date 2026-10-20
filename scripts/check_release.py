@@ -2,7 +2,7 @@ import sys
 import zipfile
 from pathlib import Path
 
-REQUIRED = ['app.py', 'static/style.css']
+REQUIRED = ['app.py', 'static/style.css', 'static/missing.css']
 FORBIDDEN = ['instance/bookings.sqlite3']
 
 
