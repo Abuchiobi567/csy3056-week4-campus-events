@@ -11,5 +11,11 @@ pipeline {
         stage('Validate Application') {
             steps { bat 'python scripts/check_app.py' }
         }
+                stage('Package Release') {
+                steps { bat 'python scripts/build_release.py' }
+            }
+            stage('Archive Release') {
+                steps { archiveArtifacts artifacts: 'dist/*.zip', fingerprint: true }
+            }
     }
 }
