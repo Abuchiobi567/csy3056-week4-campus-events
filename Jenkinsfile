@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Build Metadata') {
             steps {
-                bat 'echo Build Number: %BUILD_NUMBER% > build-info.txt'
+             bat 'python scripts/write_build_info.py'
                 archiveArtifacts artifacts: 'build-info.txt'
             }
         }
